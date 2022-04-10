@@ -32,7 +32,7 @@ async def index():
     return RedirectResponse("/docs")
 
 
-@app.get("/helloworld")
+@app.get("/helloworld", response_class=JSONResponse)
 async def camel_case(name: Optional[str] = None):
     '''
     Route with static return, "Hello Stranger", or
@@ -44,7 +44,7 @@ async def camel_case(name: Optional[str] = None):
         name = ''.join(' ' + a if a.isupper() else a for a in name)
         output = f"Hello{name}"
 
-    return output
+    return {"output": output}
 
 @app.get("/versionz", response_class=JSONResponse)
 async def versionz():
@@ -55,4 +55,4 @@ async def versionz():
     commit_hash = repo.git.rev_parse("HEAD")
     project_name = repo.working_dir.split('/')[-1:]
 
-    return [{"commit_hash": commit_hash, "project_name": project_name}]
+    return {"commit_hash": commit_hash, "project_name": project_name}

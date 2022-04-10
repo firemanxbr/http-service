@@ -24,9 +24,14 @@ To install anywhere the HTTP service just need to run:
 $ make install
 ```
 
+## Tests
+To run all tests for HTTP service just need runs:
+```code
+$ make test
+```
+
 ---
 ## TODO
-- Create unit tests to validate endpoints
 - Create a production-ready Dockerfile (https://catalog.redhat.com/software/containers/ubi8/ubi-minimal/5c359a62bed8bd75a2c3fba8?container-tabs=gti)
 - Documentation
 - Automate deployment of a local Kubernetes cluster using Kind(https://kind.sigs.k8s.io/)

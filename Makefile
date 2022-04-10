@@ -12,3 +12,7 @@ help:			## Show the help.
 .PHONY: install
 install:		## Install http-service requirements
 	$(PYTHON) -m pip install -r requirements.txt
+
+.PHONY: test
+test:		## Run all tests
+	$(PYTHON) -m pytest .
