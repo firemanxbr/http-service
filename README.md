@@ -26,7 +26,6 @@ $ make install
 
 ---
 ## TODO
-- Create a custom structure of logs
 - Create unit tests to validate endpoints
 - Create a production-ready Dockerfile (https://catalog.redhat.com/software/containers/ubi8/ubi-minimal/5c359a62bed8bd75a2c3fba8?container-tabs=gti)
 - Documentation
