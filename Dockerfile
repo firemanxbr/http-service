@@ -7,4 +7,5 @@ RUN apk add --no-cache --virtual --upgrade git \
     && apk add --upgrade xz \
     && python -m pip install -r requirements.txt \
     && rm -rf /root/.cache/pip
-CMD ["python", "main.py"]
+EXPOSE 8080
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8080"]

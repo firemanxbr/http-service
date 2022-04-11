@@ -5,7 +5,7 @@ import os
 import uvicorn
 from uvicorn.config import LOGGING_CONFIG
 
-PORT = os.getenv("HTTP_SERVICE_PORT", default="8080")
+PORT = os.getenv("HTTP_SERVICE_PORT", default=8080)
 
 if __name__ == "__main__":
     CUSTOM_START = '%(asctime)s %(levelprefix)s %(client_addr)s'
@@ -18,4 +18,4 @@ if __name__ == "__main__":
     LOGGING_CONFIG["formatters"]["default"]["datefmt"] = DATE_FORMAT
     LOGGING_CONFIG["formatters"]["access"]["datefmt"] = DATE_FORMAT
 
-    uvicorn.run("app.api:app", host="0.0.0.0", port=int(PORT), reload=True)
+    uvicorn.run("app.api:app", host="0.0.0.0", port=PORT, reload=True)
