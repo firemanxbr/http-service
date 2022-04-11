@@ -1,6 +1,6 @@
 FROM python:3.10.4-alpine3.15
-COPY . /app
-WORKDIR /app
+COPY . /http-service
+WORKDIR /http-service
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 RUN apk add --no-cache --virtual --upgrade git \

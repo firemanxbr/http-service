@@ -1,16 +1,18 @@
 '''
 An API using FastAPI
 '''
+import os
 from typing import Optional
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse, JSONResponse
 from git import Repo
 
+VERSION = os.getenv("HTTP_SERVICE_VERSION", default="0.1.0")
 
 app = FastAPI(
     title="HTTP Service like a boss",
-    description="**API** 123",
-    version="0.1.0",
+    description=f"**API** {VERSION}",
+    version=f"{VERSION}",
     terms_of_service="https://github.com/firemanxbr/http-service",
     contact={
         "name": "Marcelo Barbosa",
