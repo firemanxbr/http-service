@@ -1,4 +1,4 @@
 fastapi==0.75.1
 uvicorn==0.17.6
-GitPython==3.1.30
+GitPython==3.1.32
 email-validator==1.1.3
